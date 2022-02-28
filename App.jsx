@@ -1,5 +1,6 @@
 class App extends React.Component {
   state = {
+    active: false,
     sidebar: {
       photo:
         "https://media-exp1.licdn.com/dms/image/C4E03AQG2wje0xmvS1g/profile-displayphoto-shrink_200_200/0/1644290669008?e=1651104000&v=beta&t=LQNkw0yPtzbnPaMqwnPPlBrxUZ7BwgVyxZk1JDOumBc",
@@ -20,7 +21,7 @@ class App extends React.Component {
   };
 
   render() {
-    return (
+    return this.state.active ? (
       <React.Fragment>
         <Sidebar data={this.state.sidebar} />
         <main>
@@ -53,6 +54,8 @@ class App extends React.Component {
           </i>
         </span>
       </React.Fragment>
+    ) : (
+      <h1>Under construction.</h1>
     );
   }
 }
